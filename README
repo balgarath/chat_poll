@@ -1,17 +1,22 @@
 ChatPoll
 ========
 
-Introduction goes here.
+This is a simple chat plugin for Rails, designed to be a drop-in solution.  It uses the JQuery library,
+along with the timer and form plugins.  It operates by polling the server(these timing can be changed 
+in chat.js), so this is in no way a scalable solution.
+For now, the only way to specify a username is by adding a ?user=name to the end of the URL.  I plan to be 
+updating this part very soon, to make it easy to hook into existing authentication schemes.
 
 
 Usage
 =====
-"config/routes.rb"
-  map.from_plugin :chat_poll
+#install engines
+./script/plugin install git://github.com/lazyatom/engines.git
 
+#install chat_poll
+./script/plugin install git://github.com/balgarath/chat_poll.git
 
 script/generate plugin_migration && rake db:migrate
-
 
 Example
 =======
