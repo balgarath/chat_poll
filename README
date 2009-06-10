@@ -10,6 +10,12 @@ updating this part very soon, to make it easy to hook into existing authenticati
 
 Usage
 =====
+Note: Rails 2.3.2 is required for this version.  If you need to use an 
+earlier version of Rails, you need to install the version of Engines to 
+match it, and you may need to change a few things(like the routes.rb 
+file in the plugin) to make it work.  Rails has added lots of support 
+for Engines in 2.3.2, so some things have changed.
+
 #install engines
 ./script/plugin install git://github.com/lazyatom/engines.git
 
