@@ -13,6 +13,9 @@ Usage
 #install engines
 ./script/plugin install git://github.com/lazyatom/engines.git
 
+#add the following line to your apps config/environment.rb, after require File.join(File.dirname(__FILE__), 'boot')
+require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
 #install chat_poll
 ./script/plugin install git://github.com/balgarath/chat_poll.git
 
