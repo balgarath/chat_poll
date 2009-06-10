@@ -1,0 +1,22 @@
+ChatPoll
+========
+
+Introduction goes here.
+
+
+Usage
+=====
+"config/routes.rb"
+  map.from_plugin :chat_poll
+
+
+script/generate plugin_migration && rake db:migrate
+
+
+Example
+=======
+
+Example goes here.
+
+
+Copyright (c) 2009 [name of plugin creator], released under the MIT license

@@ -1,0 +1,32 @@
+<p>
+  <b>Name:</b>
+  <%=h @chat_room.name %>
+</p>
+<% unless params[:user] %>
+	<h1>Error: You must have a nickname</h1>
+<% else %>
+	<div id = "chat">
+		<div id = "messages">
+			<% for m in @messages do %>
+        <% if m.user == 'System' %>
+          <span class = "system">System: <%= m.body %></span><br />      
+        <% else %>
+  				<span class = "user"><%= m.user %></span>: <span class = "message"><%= m.body %></span><br />
+				<% end %>
+			<% end %>
+		</div>
+		<div id = "chat_users">
+			<ul>
+				<li>Loading Users...</li>
+			</ul>
+		</div>
+		<%= hidden_field :last, :id%>
+		
+		<% form_for [@chat_room, @message], :html => {:class => 'jqpost'} do |f| %>
+			<%= f.hidden_field :user, :value => params[:user] %>
+			<%= f.text_field :body, :class => 'chat_input' %>
+		<% end %>
+	</div><!-- /chat -->
+<% end %>
+<%= link_to 'Edit', edit_chat_room_path(@chat_room) %> |
+<%= link_to 'Back', chat_rooms_path %>
